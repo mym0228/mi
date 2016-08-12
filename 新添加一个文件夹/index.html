@@ -238,6 +238,10 @@ img{
                     content = "<span class='pdf'></span>"
                 }
                 html="<li>"+val.name+content+"</li>";
+                $(".mp3").on('click', function() {
+                    alert('22');
+                    $(this).parent("li").css('height', '120px').children("audio").css("display", "block");
+                });
                 $("#thelist").append(html);
                 console.log(val.name);
             });
@@ -249,6 +253,7 @@ img{
                 setTimeout(function () {
                     //clearInterval(intervalTime); 
                     myScroll = new iScroll('wrapper', {
+                        click: true,
                         useTransition: true,
                         topOffset: pullDownOffset,
                         onRefresh: function () {

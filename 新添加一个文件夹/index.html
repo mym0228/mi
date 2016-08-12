@@ -207,8 +207,9 @@ $(function(){
             $.each(data, function(index, val) {
                 var url = val.url.substring(val.url.length-3);
                 if (url=="mp3") {
+                    var urlAll="http://s.files.c-f.com/"+val.url;
                     var content = "<span class='mp3'></span>"+
-                                    "<audio controls='controls'>"+
+                                    "<audio class='audio' controls='controls'>"+
                                       "<source src='http://www.w3school.com.cn/i/horse.ogg' type='audio/ogg'>"+
                                     "</audio>"
                 }else{
@@ -218,6 +219,9 @@ $(function(){
                 $(".mp3").on('click', function() {
                     $(this).parent("li").css('height', '120px').children("audio").css("display", "block");
                 });
+                $(".audio").on('click',function(){
+                    alert("dianjiyinyue");
+                })
                 $("#thelist").append(html);
                 console.log(val.name);
             });

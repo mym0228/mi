@@ -229,7 +229,6 @@ $(function(){
          data: {},
          dataType: "json",
          success: function(data){
-            alert('chenggong');
             $.each(data, function(index, val) {
                 var url = val.url.substring(val.url.length-3);
                 if (url=="mp3") {
@@ -257,7 +256,6 @@ $(function(){
                     myScroll.refresh();
                 });
             resultContentH = $("#thelist").height(); 
-            alert(resultContentH);
             if (resultContentH > 0) { 
                 //判断数据加载完成的条件 
                 console.log("此时showResult的高度是:" + resultContentH); 
@@ -419,7 +417,6 @@ function pullDownAction () {
              success: function(data){
                 //点击改变高度后，再重新计算高度，先归零。。
                 //$("#thelist").height(resultContentH);
-                alert(resultContentH);
                 $("#thelist").html(" ");
                 $("#thelist").height(resultContentH); 
                 $.each(data, function(index, val) {
@@ -480,7 +477,6 @@ function pullUpAction () {
                 li.innerText = 'Generated row ' + (++generatedCount);
                 el.appendChild(li, el.childNodes[0]);*/
                 //$("#thelist").height(resultContentH);
-                alert(resultContentH);
                 $("#thelist").html(" ");
                 $("#thelist").height(resultContentH); 
                 var num;

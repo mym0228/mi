@@ -94,7 +94,6 @@ img{
         display: block;
         float: right;
         color: white;
-        background: url("http://cfimg.l99.com.cn/share_btn.png") 0 0 no-repeat;
         border: 0;
         width: 29%;
         height: 50px;
@@ -105,6 +104,29 @@ img{
         right: 2%;
         top: 50%;
         margin-top: -25px;
+    }
+    .footer a span{
+        display: block;
+        float: right;
+        color: white;
+        border: 0;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 18px;
+        position: absolute;
+        right: 2%;
+        top: 50%;
+        margin-top: -25px;
+    }
+    .footer a img{
+        width: 100%;
+        height: 50px;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        z-index: -1;
     }
     .APP_logo{
         width:20%;
@@ -119,7 +141,6 @@ img{
         line-height:94px;
         font-size:24px;
         float:left;
-        margin-left:10px;
         color: white;
     }
 
@@ -193,7 +214,10 @@ img{
         <div class="logo_name">
             <p>中国足球</p>
         </div>
-        <a href="">立即下载</a>
+        <a href="">
+            <span>立即下载</span>
+            <img src="http://cfimg.l99.com.cn/share_btn.png">
+        </a>
 </div>
 
 <script type="text/javascript" src="script/iscroll.js"></script>

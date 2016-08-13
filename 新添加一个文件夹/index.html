@@ -243,13 +243,17 @@ $(function(){
                     content = "<span class='pdf'></span>"
                 }
                 html="<li>"+val.name+content+"</li>";
-                $(".mp3").on('click', function() {
-                    $(this).parent("li").css('height', '120px').children("audio").css("display", "block");
-                });
+
                 
                 $("#thelist").append(html);
                 console.log(val.name);
             });
+            $(".mp3").on('click', function() {
+                    $(this).parent("li").css('height', '120px').children("audio").css("display", "block");
+                    var hh=$("#thelist").height()+180;
+                    $("#thelist").height(hh);
+                    console.log("thelist:" + hh); 
+                });
             var resultContentH = $("#thelist").height(); 
             if (resultContentH > 0) { 
                 //判断数据加载完成的条件 

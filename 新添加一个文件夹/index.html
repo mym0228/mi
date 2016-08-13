@@ -36,8 +36,7 @@
 }
 #scroller li {
     padding:0 10px;
-    height:60px;
-    line-height:60px;
+    
     margin-top:10px;
 }
 #pullDown, #pullUp {
@@ -250,11 +249,13 @@ $(function(){
             });
             $(".mp3").on('click', function() {
                     $(this).parent("li").css('height', '120px').children("audio").css("display", "block");
-                    var hh=$("#thelist").height()+180;
+                    //点击之后改ul的高度
+                    var hh=$("#thelist").height()+80;
                     $("#thelist").height(hh);
-                    console.log("thelist:" + hh); 
+                    console.log("thelist:" + hh);
+                    myScroll.refresh();
                 });
-            var resultContentH = $("#thelist").height(); 
+            resultContentH = $("#thelist").height(); 
             if (resultContentH > 0) { 
                 //判断数据加载完成的条件 
                 console.log("此时showResult的高度是:" + resultContentH); 
@@ -262,8 +263,7 @@ $(function(){
                 setTimeout(function () {
                     //clearInterval(intervalTime); 
                     myScroll = new iScroll('wrapper', {
-                        //开启点击事件
-                        click: true,
+                        click: true,    //开启点击事件
                         hScrollbar: false, //是否显示水平滚动条  
                         vScrollbar: false, //同上垂直滚动条  
                         useTransition: true,
@@ -415,6 +415,8 @@ function pullDownAction () {
              data: {},
              dataType: "json",
              success: function(data){
+                //点击改变高度后，再重新计算高度，先归零。。
+                $("#thelist").height(resultContentH);
                 $("#thelist").html(" ");
                 
                 $.each(data, function(index, val) {
@@ -429,14 +431,18 @@ function pullDownAction () {
                         content = "<span class='pdf'></span>"
                     }
                     html="<li>"+val.name+content+"</li>";
-                    $(".mp3").on('click', function() {
-                        $(this).parent("li").css('height', '120px').children("audio").css("display", "block");
-                    });
                     $("#thelist").append(html);
                     console.log(val.name);
                 });
                 console.log(data);
-                
+                $(".mp3").on('click', function() {
+                        $(this).parent("li").css('height', '120px').children("audio").css("display", "block");
+                            var hh=$("#thelist").height()+80;
+                        $("#thelist").height(hh);
+                        console.log("thelist:" + hh);
+                        myScroll.refresh();
+                    });
+                myScroll.refresh();
                 start = 0;
                 // if () {}
                 if ($(".pullUpLabel").html()=="已加载全部内容") {
@@ -470,6 +476,7 @@ function pullUpAction () {
                 }
                 li.innerText = 'Generated row ' + (++generatedCount);
                 el.appendChild(li, el.childNodes[0]);*/
+                $("#thelist").height(resultContentH);
                 $("#thelist").html(" ");
                 var num;
                 /*var resultContentH = $("#thelist").height("0");*/
@@ -485,12 +492,17 @@ function pullUpAction () {
                         content = "<span class='pdf'></span>"
                     }
                     html="<li>"+val.name+content+"</li>";
-                    $(".mp3").on('click', function() {
-                        $(this).parent("li").css('height', '120px').children("audio").css("display", "block");
-                    });
                     $("#thelist").append(html);
                     console.log(val.name);
                 });
+                $(".mp3").on('click', function() {
+                        $(this).parent("li").css('height', '120px').children("audio").css("display", "block");
+                            var hh=$("#thelist").height()+80;
+                        $("#thelist").height(hh);
+                        console.log("thelist:" + hh);
+                        myScroll.refresh();
+                    });
+                myScroll.refresh();
                 console.log(num+1);
 
        //页面数据少时，滚动框长

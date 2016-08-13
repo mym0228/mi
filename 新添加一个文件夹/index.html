@@ -242,7 +242,6 @@ $(function(){
                     content = "<span class='pdf'></span>"
                 }
                 html="<li>"+val.name+content+"</li>";
-
                 
                 $("#thelist").append(html);
                 console.log(val.name);
@@ -417,8 +416,9 @@ function pullDownAction () {
              success: function(data){
                 //点击改变高度后，再重新计算高度，先归零。。
                 //$("#thelist").height(resultContentH);
+                alert(resultContentH);
                 $("#thelist").html(" ");
-                $("#thelist").height(resultContentH); 
+                
                 $.each(data, function(index, val) {
                     var url = val.url.substring(val.url.length-3);
                     if (url=="mp3") {
@@ -442,7 +442,8 @@ function pullDownAction () {
                         console.log("thelist:" + hh);
                         myScroll.refresh();
                     });
-                myScroll.refresh();
+                $("#thelist").height(resultContentH);
+                
                 start = 0;
                 // if () {}
                 if ($(".pullUpLabel").html()=="已加载全部内容") {
@@ -477,8 +478,8 @@ function pullUpAction () {
                 li.innerText = 'Generated row ' + (++generatedCount);
                 el.appendChild(li, el.childNodes[0]);*/
                 //$("#thelist").height(resultContentH);
+                alert(resultContentH);
                 $("#thelist").html(" ");
-                $("#thelist").height(resultContentH); 
                 var num;
                 /*var resultContentH = $("#thelist").height("0");*/
                 $.each(data, function(index, val) {
@@ -503,7 +504,7 @@ function pullUpAction () {
                         console.log("thelist:" + hh);
                         myScroll.refresh();
                     });
-                myScroll.refresh();
+                $("#thelist").height(resultContentH);
                 console.log(num+1);
 
        //页面数据少时，滚动框长

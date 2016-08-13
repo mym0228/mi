@@ -418,10 +418,10 @@ function pullDownAction () {
              dataType: "json",
              success: function(data){
                 //点击改变高度后，再重新计算高度，先归零。。
-                $("#thelist").height(resultContentH);
+                //$("#thelist").height(resultContentH);
                 alert(resultContentH);
                 $("#thelist").html(" ");
-                
+                $("#thelist").height(resultContentH); 
                 $.each(data, function(index, val) {
                     var url = val.url.substring(val.url.length-3);
                     if (url=="mp3") {
@@ -479,9 +479,10 @@ function pullUpAction () {
                 }
                 li.innerText = 'Generated row ' + (++generatedCount);
                 el.appendChild(li, el.childNodes[0]);*/
-                $("#thelist").height(resultContentH);
+                //$("#thelist").height(resultContentH);
                 alert(resultContentH);
                 $("#thelist").html(" ");
+                $("#thelist").height(resultContentH); 
                 var num;
                 /*var resultContentH = $("#thelist").height("0");*/
                 $.each(data, function(index, val) {

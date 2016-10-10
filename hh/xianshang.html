@@ -1,0 +1,223 @@
+<html lang="en"><head> 
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>中国足球网</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <!-- <link href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <!-- <script src="http://cdn.bootcss.com/bootstrap/2.3.2/js/bootstrap.min.js"></script> -->
+
+    <style type="text/css">
+    img{
+        border:none;
+    }
+    a{
+        text-decoration:none;
+        text-underline:none;
+    }
+    *{  font-family:"微软雅黑",Arial;}
+    ul, li{
+        padding:0;
+        margin:0;
+        list-style:none;
+    }
+    p{
+        -webkit-margin-before: 0;
+        -webkit-margin-after: 0;
+    }
+    body{
+        padding:0;
+        margin:0;
+    }
+
+    .header_con{
+        width:100%;
+        height:50px;
+        background-color:#dd0000;
+    }
+    .header_con span{
+        color:#ffffff;
+        padding-top:21px;
+        font-size:20px;
+        display:block;
+        float:left;
+    }
+    .CF_logo{
+        width:160px;
+        height:50px;
+        float:left;
+        margin-left:10px;
+        background:url("http://s.files.c-f.com/CF_logo.png") 0 0 no-repeat;
+    }
+    .download_app{width:100%;height:auto;background-color:#05234d;overflow:hidden;padding:15px 10px;position:fixed;bottom:0;opacity:0.9;color:#ffffff;}
+    .download_app a{
+        display: block;
+        float: right;
+        color: white;
+        background: url("http://s.files.c-f.com/share_btn.png") 0 0 no-repeat;
+        border: 0;
+        width: 120px;
+        height: 50px;
+        margin: 7px 25px 0 0;
+        line-height: 45px;
+        text-align: center;
+        font-size: 18px;
+    }
+    .APP_logo{width:65px;height:65px;float:left;background:url("http://s.files.c-f.com/APP_logo.png") 0 0 no-repeat;}
+    .CF_logo{width:160px;height:50px;float:left;margin-left:10px;background:url("http://s.files.c-f.com/CF_logo.png") 0 0 no-repeat;}
+    .logo_name{width:100px;height:64px;line-height:64px;font-size:18px;float:left;margin-left:10px;}
+
+    .video{
+        width: 100%;
+        height: auto;
+        margin: 5px 0 30px 0;
+        position: relative;
+    }
+    #video1,#video2,#video3{
+        width: 100%;
+        display: none;
+    }
+    .item{
+        width: 94%;
+        height: 30px;
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 30px;
+        margin: 0 auto;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #d9d9d9;
+    }
+    .content{
+        width: 94%;
+        margin: 0 auto;
+        padding: 15px 0 20px;
+        padding-bottom: 50px;
+        font-size: 14px;
+    }
+    .content ul{
+        width: 49.5%;
+        display: inline-block;
+    }
+    .relative{
+        position: relative;
+    }
+    .absolute{
+        position: absolute;
+        top: 50%;
+        margin-top: -100px;
+    }
+    .content ul li{
+        height: 40px;
+        line-height: 40px;
+        margin: 10px 0;
+    }
+    .content ul span{
+        display: inline-block;
+        font-size: 14px;
+    }
+    .right{
+        float: right;
+    }
+    .left{
+        float: left;
+    }
+    .content ul i{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background:url("http://s.files.c-f.com/select.jpg") 0 0 no-repeat;
+    }
+    .content p{
+        text-indent: 24px; 
+    }
+    .content ul i img{
+        display: none;
+    }
+    .right-i{
+        float: right;
+        margin: 12px 24% 0 20px;
+    }
+    .left-i{
+        float: left;
+        margin: 12px 20px 0 24%;
+    }
+    .last{
+        padding-bottom: 100px;
+    }
+
+    .bg1,.bg2,.bg3{
+        width: 100%;
+        position: absolute;
+        background-color: #000000;
+    }
+    .bg1{
+        height: 200px;
+        left: 0;
+        top: 0;
+    }
+    .bg2,.bg3{
+        height: 200px;
+        top: 200px;
+        left: 0;
+    }
+    #load1,#load2,#load3{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -32px;
+        margin-left: -32px;
+    }
+    </style>
+</head>
+<body>
+	<div class="header_con">
+        <a class="CF_logo" href="" title="中国足球网"> </a>
+        <span>中国足球网</span>
+    </div>
+
+    <div class="video">
+        <div class="bg1" style="height: 160px; display: none;">
+            <img id="load1" src="http://s.files.c-f.com/www/images/loading_b.gif">
+        </div>
+        <video id="video1" controls="" name="media" style="display: inline;">
+            <source id="source1" src="http://s.files.c-f.com/elearning/pe2016/medias/swf/ref/readingthegame-penaltyarea/LD" type="video/mp4">
+        </video>
+
+        <div class="bg2" style="top: 160px; height: 180px; display: none;">
+            <img id="load2" src="http://s.files.c-f.com/www/images/loading_b.gif">
+        </div>
+        <video id="video2" controls="" name="media" style="display: inline;">
+            <source id="source2" src="http://s.files.c-f.com/elearning/pe2016/medias/videosswf/ref/ejercicio2-training/LD" type="video/mp4">
+        </video>
+
+        <div class="bg3" style="top: 320px; height: 200px; display: none;">
+            <img id="load3" src="http://s.files.c-f.com/www/images/loading_b.gif">
+        </div>
+        <video id="video3" controls="" name="media" style="display: inline;">
+            <source id="source3" src="http://s.files.c-f.com/elearning/pe2016/medias/videosswf/ref/ejercicio2-match/LD" type="video/mp4">
+        </video>
+    </div><p class="item">训练描述</p><div class="content"><p>本练习旨在加强裁判员对比赛的理解，提高其在比赛实况时迅速决定观察重点所需的身心快速反应能力。</p><p>建立直接进攻的场景，而且至少需要三个不同的场景。</p><p>1. 在侧翼的场景。在此场景中一名攻方球员与一名防守球员对峙，并在禁区内/外区域的左手/右手边出现/不出现犯规情况。</p><p>2. 侧翼进攻的场景。场景中有一名前锋可以选择运球进入球员密集的禁区，并在该区域触犯《规则》第十二章。</p><p>3. 设立禁区中央地区进行的一对一进攻情景（攻方球员对守门员），并触犯《规则》第十二章</p><p>一旦本训练结束，指导员将从技术、纪律处罚方面的决定和战术重点等方面给予裁判员反馈。与此同时，另一名裁判员开始新一轮训练场景，形成持续不断的训练循环。</p></div><p class="item">相关资料</p><div class="content"><p>-四名攻方球员</p><p>-四名防守球员</p><p>-一名传球员</p><p>-一名守门员</p></div><p class="item">训练目标</p><div class="content" style="padding-bottom: 110px;"><p>提高裁判员在禁区应对不同情景的技巧和表现。</p><p>提高裁判员对比赛的理解以及大脑的敏锐程度，以在特定场景中能迅速适应选位。</p></div>
+    <!-- <p class="item">训练描述</p>
+    <div class="content" id="description">
+        
+    </div>
+    <p class="item">相关资料</p>
+    <div class="content" id="material">
+        
+    </div>
+    <p class="item">训练目标</p>
+    <div class="content" id="objectives"> -->
+
+    <div class="download_app">
+        <div class="APP_logo">&nbsp;</div>
+        <div class="logo_name">
+            <p>中国足球网</p>
+        </div>
+        <a href="http://www.c-f.com/download">立即下载</a>
+    </div>
+
+</body></html>

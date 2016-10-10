@@ -671,10 +671,13 @@ a, button, input, li {
 
 <div class="video">
   <!--template bindings={}-->
-    <video controls="" width="100%" name="media" #videoplayer autoplay>
+    <video controls="" width="100%" name="media">
       <source type="video/mp4" src="http://s.files.c-f.com/elearning/pe2016/medias/swf/ref/penaltyareacontrol/HD">
     </video>
-    <video id="video" #videoplayer autoplay controls name="media">
+    <video id="video" #videoplayer controls name="media">
+      <source src="http://s.files.c-f.com/elearning/pe2016/medias/swf/ref/penaltyareacontrol/HD" type="video/mp4">
+    </video>
+    <video #videoplayer controls name="media">
       <source src="http://s.files.c-f.com/elearning/pe2016/medias/swf/ref/penaltyareacontrol/HD" type="video/mp4">
     </video>
     <!-- <video controls="" width="100%" name="media">
